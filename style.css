@@ -1,0 +1,600 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    color: #fff;
+    background-color: #111;
+    line-height: 1.6;
+}
+
+/* Navbar */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 600;
+    color: #ff4081;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ff4081;
+}
+
+/* Mobile Menu */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url('/images/Photography\ services\ -\ Made\ with\ PosterMyWall.jpg') no-repeat center center/cover;
+    position: relative;
+}
+
+.hero-content {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background: #ff4081;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #e60073;
+}
+
+/* Services Section */
+#services, #portfolio, #testimonials, #contact {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+h2 {
+    font-size: 36px;
+    color: #ff4081;
+    margin-bottom: 30px;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.service {
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+.service i {
+    font-size: 40px;
+    color: #ff4081;
+    margin-bottom: 10px;
+}
+
+/* Portfolio Section */
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.gallery img {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* Testimonial Section - Slider */
+/* Testimonial Section */
+/* Testimonial Section */
+/* Testimonial Section */
+#testimonials {
+    text-align: center;
+    padding: 50px 20px;
+    background: #222;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-slider {
+    position: relative;
+    max-width: 400px; /* Limit width for better focus */
+    margin: auto;
+    overflow: hidden;
+}
+
+.testimonial-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: max-content;
+}
+
+.testimonial {
+    flex: 0 0 100%; /* Each testimonial takes full width */
+    max-width: 100%;
+    background: #333;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-style: italic;
+    min-width: 400px;
+    transition: 0.3s;
+}
+
+/* Testimonial Image */
+.testimonial img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 3px solid #ff4081;
+}
+
+/* Testimonial Name */
+.testimonial h4 {
+    margin-top: 10px;
+    color: #ff4081;
+}
+
+/* Navigation Buttons */
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 64, 129, 0.8);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 20px;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background: #e60073;
+}
+
+
+
+/* Navigation Buttons */
+
+
+.prev-btn {
+    left: -40px;
+}
+
+.next-btn {
+    right: -40px;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background: #e60073;
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+    .testimonial {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .testimonial-slider {
+        max-width: 100%;
+    }
+    .prev-btn, .next-btn {
+        left: 10px;
+        right: 10px;
+    }
+}
+
+
+/* Contact Section */
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ff4081;
+    border-radius: 5px;
+    background: #222;
+    color: #fff;
+}
+
+button {
+    background: #ff4081;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #e60073;
+}
+
+/* Footer with Social Media Links */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #222;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: #ff4081;
+    font-size: 24px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #e60073;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .testimonial-container {
+        flex-direction: column;
+    }
+}
+
+/*about*/
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #000;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.about-hero {
+    background: url('/images/WhatsApp\ Image\ 2025-01-31\ at\ 17.53.20_925632ca.jpg') no-repeat center center/cover;
+    height: 60vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-hero .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.about-hero-content {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.about-section, .services, .why-choose-us, .training, .contact {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.service-container, .features {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.service-box, .feature {
+    width: 250px;
+    margin: 15px;
+    padding: 20px;
+    background: #222;
+    border-radius: 8px;
+}
+
+.btn {
+    background: #fca311;
+    padding: 10px 20px;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/*contact*/
+
+/* Header */
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #fca311;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+    color: #fca311;
+}
+
+/* Mobile Menu */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.contact-hero {
+    background: url('/images/Photography\ services\ -\ Made\ with\ PosterMyWall.jpg') no-repeat center center/cover;
+    height: 60vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.contact-hero .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+    position: relative;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 2.5em;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+}
+
+/* Contact Section */
+.contact {
+    padding: 50px 20px;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.contact-info, .contact-form {
+    width: 45%;
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.info-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.info-box i {
+    font-size: 22px;
+    color: #fca311;
+    margin-right: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background: #333;
+    border: none;
+    color: white;
+    border-radius: 5px;
+}
+
+.contact-form .btn {
+    display: block;
+    width: 100%;
+    background: #fca311;
+    padding: 10px;
+    color: black;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-form .btn:hover {
+    background: #ffcc66;
+}
+
+/* Social Icons */
+.social-icons {
+    margin-top: 15px;
+}
+
+.social-icons a {
+    font-size: 20px;
+    margin: 0 10px;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #fca311;
+}
+
+/* Footer */
+footer {
+    background: #000;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #000;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .contact-info, .contact-form {
+        width: 90%;
+    }
+}
