@@ -6,36 +6,28 @@ menuToggle.addEventListener("click", () => {
     navLinks.classList.toggle("active");
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    const container = document.querySelector(".testimonial-container");
-    const prevBtn = document.querySelector(".prev-btn");
-    const nextBtn = document.querySelector(".next-btn");
+let currentIndex = 0;
+const testimonials = document.querySelectorAll(".testimonial");
+const dots = document.querySelectorAll(".dot");
 
-    let index = 0;
-    const testimonials = document.querySelectorAll(".testimonial");
-    const totalTestimonials = testimonials.length;
-
-    function updateSlider() {
-        const scrollWidth = testimonials[0].offsetWidth; // Width of one testimonial
-        container.style.transform = `translateX(-${index * scrollWidth}px)`;
-    }
-
-    nextBtn.addEventListener("click", () => {
-        index = (index + 1) % totalTestimonials;
-        updateSlider();
+function showTestimonial(index) {
+    testimonials.forEach((testimonial, i) => {
+        testimonial.classList.remove("active");
+        dots[i].classList.remove("active");
     });
 
-    prevBtn.addEventListener("click", () => {
-        index = (index - 1 + totalTestimonials) % totalTestimonials;
-        updateSlider();
-    });
+    testimonials[index].classList.add("active");
+    dots[index].classList.add("active");
+}
 
-    // Auto-slide every 4 seconds
-    setInterval(() => {
-        index = (index + 1) % totalTestimonials;
-        updateSlider();
-    }, 4000);
+function currentSlide(index) {
+    currentIndex = index;
+    showTestimonial(currentIndex);
+}
 
-    // Adjust on window resize
-    window.addEventListener("resize", updateSlider);
-});
+function autoSlide() {
+    currentIndex = (currentIndex + 1) % testimonials.length;
+    showTestimonial(currentIndex);
+}
+
+setInterval(autoSlide, 5000);
