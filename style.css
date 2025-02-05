@@ -29,7 +29,7 @@ header {
 .logo {
     font-size: 24px;
     font-weight: 600;
-    color: #ff4081;
+    color: #fca311;
 }
 
 nav {
@@ -47,7 +47,7 @@ nav {
 }
 
 .nav-links a {
-    color: #fff;
+    color: #fca311;
     text-decoration: none;
     font-size: 16px;
     transition: color 0.3s ease;
@@ -97,7 +97,7 @@ nav {
 
 .btn {
     display: inline-block;
-    background: #ff4081;
+    background: #fca311;
     color: #fff;
     padding: 12px 24px;
     border-radius: 5px;
@@ -117,7 +117,7 @@ nav {
 
 h2 {
     font-size: 36px;
-    color: #ff4081;
+    color: #fca311;
     margin-bottom: 30px;
 }
 
@@ -138,7 +138,7 @@ h2 {
 
 .service i {
     font-size: 40px;
-    color: #ff4081;
+    color: #fca311;
     margin-bottom: 10px;
 }
 
@@ -254,14 +254,14 @@ form {
 input, textarea {
     width: 100%;
     padding: 12px;
-    border: 1px solid #ff4081;
+    border: 1px solid #fca311;
     border-radius: 5px;
     background: #222;
     color: #fff;
 }
 
 button {
-    background: #ff4081;
+    background: #fca311;
     color: #fff;
     padding: 12px;
     border: none;
@@ -289,7 +289,7 @@ footer {
 }
 
 .social-icons a {
-    color: #ff4081;
+    color: #fca311;
     font-size: 24px;
     transition: 0.3s;
 }
@@ -377,6 +377,26 @@ header {
     background: #222;
     border-radius: 8px;
 }
+.service-card {
+    width: auto;
+    margin: 15px;
+    padding: 20px;
+    background: #222;
+    border-radius: 8px;
+    
+}
+
+#para{
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+    word-spacing: -1px;
+    letter-spacing: 0.5px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: auto;
+    
+}
 
 .btn {
     background: #fca311;
@@ -388,32 +408,10 @@ header {
 
 /*contact*/
 
-/* Header */
-.logo {
-    font-size: 22px;
-    font-weight: bold;
-    color: #fca311;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-}
-
-.nav-links li {
-    margin: 0 15px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: white;
-    font-size: 16px;
-    transition: color 0.3s ease;
-}
 
 .nav-links a.active,
 .nav-links a:hover {
-    color: #fca311;
+    color: blue;
 }
 
 /* Mobile Menu */
@@ -524,7 +522,7 @@ header {
 .social-icons a {
     font-size: 20px;
     margin: 0 10px;
-    color: white;
+    color:#fca311;
     transition: color 0.3s ease;
 }
 
