@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Online Learning</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Background Image */
+        .bg-image {
+            background: url('/images/070c8525-78ba-4c3e-8618-6ff7f7d86240.jpg') no-repeat center center/cover;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        /* Loader Styles */
+        .loader {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 4px solid white;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+            display: none;
+            margin-left: 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-900 bg-opacity-60">
+
+    <div class="bg-image"></div> <!-- Background Image -->
+
+    <div class="w-full max-w-md bg-white p-6 rounded-lg shadow-lg">
+        <h2 class="text-xl font-bold text-center text-gray-700">Get Registered</h2>
+
+        <form id="registerForm" class="mt-4 space-y-3">
+            <input type="text" id="name" placeholder="Full Name" required 
+                class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400">
+            
+            <input type="email" id="email" placeholder="Email Address" required 
+                class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400">
+            
+            <input type="tel" id="tel" placeholder="Phone Number" required 
+                class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400">
+
+            <button type="submit" id="submitBtn" 
+                class="w-full flex items-center justify-center bg-blue-500 text-white p-3 rounded hover:bg-blue-600 transition">
+                <span>Register</span>
+                <div class="loader" id="loader"></div>
+            </button>
+        </form>
+
+        <p id="message" class="text-center text-red-500 mt-4"></p>
+    </div>
+
+    <script>
+        document.getElementById("registerForm").addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const tel = document.getElementById("tel").value;
+            const submitBtn = document.getElementById("submitBtn");
+            const loader = document.getElementById("loader");
+
+            // Disable button and show loader
+            submitBtn.disabled = true;
+            loader.style.display = "inline-block";
+
+            try {
+                const response = await fetch("https://bamlens-back-end.onrender.com/register/register/initiate", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ name, email, tel })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    localStorage.setItem("email", email); // Store email for next step
+                    window.location.href = "verify-otp.html"; // Redirect to OTP page
+                } else {
+                    document.getElementById("message").innerText = data.message;
+                }
+            } catch (error) {
+                document.getElementById("message").innerText = "An error occurred. Please try again.";
+            }
+
+            // Re-enable button and hide loader
+            submitBtn.disabled = false;
+            loader.style.display = "none";
+        });
+    </script>
+
+</body>
+</html>
