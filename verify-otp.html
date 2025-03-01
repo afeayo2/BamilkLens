@@ -80,7 +80,7 @@
             loader.style.display = "inline-block";
 
             try {
-                const response = await fetch("https://bamlens-back-end.onrender.com/register/register/verify-email", {
+                const response = await fetch("https://bamik-server.onrender.com/register/verify-email", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ email, otp })
