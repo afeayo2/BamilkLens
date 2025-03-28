@@ -3,90 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Bamilk Lens </title>
+    <title>Bamilk Lens & Multimedia</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
+<style>
+  
+/* Hero Slider */
+/* Hero Slider */
+.slider {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    width: 300%; /* 3 images = 300% */
+    animation: slide 9s infinite;
+}
+
+.slides img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+@keyframes slide {
+    0%, 100% { transform: translateX(0); }
+    33% { transform: translateX(-100%); }
+    66% { transform: translateX(-200%); }
+}
+/* Countdown Section */
+.countdown-section {
+    text-align: center;
+    padding: 40px 20px;
+    background: #2a2a2b;
+}
+
+.countdown-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.countdown-text {
+    max-width: 500px;
+    text-align: left;
+}
+
+.countdown-text h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.countdown-text p {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+#countdown {
+    font-size: 3em;
+    font-weight: bold;
+    color: #dc3545; /* Red color for urgency */
+    margin-bottom: 20px;
+}
+
+.countdown-text .btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.countdown-image img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+</style>
 <body>
 
     <!-- Navbar -->
     <header>
-        <div class="logo"> Bamilk Lens </div>
+        <div class="logo">Bamilk Lens</div>
         <nav>
             <ul class="nav-links">
-                <li><a href="/index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <!--<li><a href="#testimonials">Testimonials</a></li>-->
-                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-            <button class="menu-toggle"><i class="fas fa-bars"></i></button>
         </nav>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Image Slider -->
     <section class="hero">
+        <div class="slider">
+            <div class="slides">
+                <img src="images/bam1.jpg" alt="Slide 1">
+                <img src="images/bam2.jpg" alt="Slide 2">
+                <img src="images/bam3.png" alt="Slide 3">
+            </div>
+        </div>
         <div class="hero-content">
-            <h1>Welcome to Bamilk Lens & Multimedia</h1>
-            <p>Where Stories Come to Life.</p>
-            <a href="https://wa.me/2347065950181?text=Hello!%20I%20need%20assistance." class="btn">Book a Session</a>
+            <h1>BamilkLens Content Creation</h1>
+            <p>Join our masterclass on May 13, 2025</p>
+            <a href="/register.html" class="btn">Register Now</a>
         </div>
     </section>
 
-    <section id="services">
-        <h2>Our Services</h2>
-        <div class="services-container">
-            <div class="service">
-                <i class="fas fa-camera-retro"></i>
-                <h3>Videography & Photography</h3>
-                <p> From weddings and corporate events to brand commercials, we deliver visually stunning content.</p>
+    <!-- Countdown Timer -->
+    <section class="countdown-section">
+        <h2>BamilkLens Content Creation Master Class. Few Days To Go, Register Now!</h2>
+        <div id="countdown"></div>
+        <div class="countdown-content">
+            <div class="countdown-image">
+                <img src="images/bam2.jpg" alt="Event Flyer">
             </div>
-            <div class="service">
-                <i class="fas fa-radio"></i>
-                <h3>Content Creation</h3>
-                <p>From Video Ads & Commercials to Social Media Video Content, Motion Graphics & Animation tailored to your brand</p>
-            </div>
-            <div class="service">
-                <i class="fas fa-calendar-check"></i>
-                <h3>Social Media Management</h3>
-                <p>Account Setup & Optimization<br>Content Planning & Strategy<br>Engagement Growth</p>
-            </div> <!-- ✅ Correctly Closed This Div -->
-            <div class="service">
-                <i class="fas fa-laptop"></i>
-                <h3>Digital Marketing</h3>
-                <p>Social Media Ads<br>SEO <br>Brand Positioning</p>
-            </div>
-            <div class="service">
-                <i class="fas fa-users"></i>
-                <h3> Training & Workshops </h3>
-                <p>✅ Mobile Videography Masterclass<br>✅ Content Creation for Business Growth<br>✅ Social Media Monetization<br>✅ Photography & Video Editing</p> 
+            <div class="countdown-text">
+                <h3>CONTENT CREATION IS PRINTING MONEY IN 2025! ARE YOU CASHING IN?</h3>
+                <p> Join us on for an exclusive Content Creation Master class where you'll 
+                    learn:</p>
+                <p><i class="fas fa-chart-line"></i> <strong>How to create viral content that commands attention</strong></p>
+                <p><i class="fas fa-film"></i> <strong>Pro-level video editing & storytelling techniques</strong></p>
+                <p><i class="fas fa-money-bill-wave"></i> <strong>The secret to turning content into CASH (even with just your phone!)</strong></p>
+                
+                <p><i class="fas fa-map-marker-alt"></i> <strong>Venue:</strong> Oriental Hotel, VI, Lagos, Nigeria</p>
+                <p><i class="fas fa-clock"></i> <strong>Time:</strong> 10:00 AM - 4:00 PM</p>
+                
+                <a href="/register.html" class="btn">Register Now</a>
             </div>
         </div>
     </section>
-    <!-- Content Creation Flyer and Register Section -->
-<section id="content-creation">
-    <div class="flyer-container">
-        <img src="./images/070c8525-78ba-4c3e-8618-6ff7f7d86240.jpg" alt="Content Creation Flyer" class="flyer-image">
-        <div class="flyer-info">
-            <h2>Join Our Content Creation Masterclass!</h2>
-            <p>Learn the latest techniques in content creation and take your brand to the next level.</p>
-            <a href="register.html" class="btn">Register Now</a> <!-- Link to your registration page -->
-        </div>
-    </div>
-</section>
-
+    
     
 
-    <!-- Portfolio Section -->
-    <section id="portfolio">
-        <h2>Our Work</h2>
-        <div class="gallery">
-            <img src="/images/IMG_5351.JPG" alt="Wedding">
-            <img src="/images/IMG_6672.JPG" alt="Portrait">
-            <img src="/images/OAPL2814.jpg" alt="Event">
+    <!-- Parallax Services Section -->
+    <section id="services" class="parallax">
+        <h2>Our Services</h2>
+        <div class="services-container">
+            <div class="service"><i class="fas fa-camera-retro"></i><h3>Photography</h3></div>
+            <div class="service"><i class="fas fa-video"></i><h3>Videography</h3></div>
+            <div class="service"><i class="fas fa-laptop"></i><h3>Digital Marketing</h3></div>
         </div>
-    </section>
 
 <!-- Testimonial Section -->
 <section id="testimonials">
@@ -101,7 +172,7 @@
             </div>
     
             <div class="testimonial">
-                <img src="/images/1725533183312.jpeg" alt="User 2" class="profile-pic">
+                <img src="/images/IMG_5351.JPG" alt="User 2" class="profile-pic">
                 <p class="name">MAdekunle M. </p>
 
            <!--  <p class="role">Developer</p> -->
@@ -127,11 +198,9 @@
 
 
     <!-- WhatsApp Chat Button -->
-    <a href="https://wa.me/2347065950181?text=Hello!%20I%20need%20assistance."
-       target="_blank"
-       class="whatsapp-chat">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-        Chat with us
+    class="whatsapp-chat">
+    <a href="https://wa.me/2347065950181" class="whatsapp-chat">
+        <i class="fab fa-whatsapp"></i> Chat with us
     </a>
      
     <!-- Contact Section -->
@@ -155,5 +224,27 @@
             <a href="#"><i class="fab fa-linkedin"></i></a>
         </div>
     </footer>
+</body>
+</html>
+
+<script>
+
+// Countdown Timer
+const countdown = document.getElementById("countdown");
+let eventDate = new Date("May 13, 2025 00:00:00").getTime();
+
+setInterval(() => {
+    let now = new Date().getTime();
+    let distance = eventDate - now;
+    
+    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+}, 1000);
+
+</script>
 </body>
 </html>
